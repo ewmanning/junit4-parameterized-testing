@@ -11,15 +11,11 @@ import java.util.Collection;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class ParameterizedAddTest {
-    private int first;
-    private int second;
-    private int result;
+public class ParameterizedAddTest extends ParameterizedAbstract {
 
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                //Add
                 {3, 2, 5},
                 {2, 3, 5},
                 {1, 4, 5},
@@ -29,9 +25,7 @@ public class ParameterizedAddTest {
     }
 
     public ParameterizedAddTest(int first, int second, int result) {
-        this.first = first;
-        this.second = second;
-        this.result = result;
+        super(first, second, result);
     }
 
     @Test
